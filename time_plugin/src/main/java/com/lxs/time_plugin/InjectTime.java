@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.CLASS)
 @Target(ElementType.METHOD)
 public @interface InjectTime {
-
+    String tag() default "";
 }

@@ -26,16 +26,19 @@ class TimePlugin extends Transform implements Plugin<Project> {
         return "TimePlugin"
     }
 
+    //要处理的数据类型
     @Override
     Set<QualifiedContent.ContentType> getInputTypes() {
         return TransformManager.CONTENT_CLASS
     }
 
+    //作用范围
     @Override
     Set<? super QualifiedContent.Scope> getScopes() {
         return TransformManager.SCOPE_FULL_PROJECT
     }
 
+    //支持NOTCHANGED当前文件不需要处理ADDED、CHANGED、REMOVED
     @Override
     boolean isIncremental() {
         return false
